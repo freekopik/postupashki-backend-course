@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm -f server
+
 if [ -f "server.c" ]; then
     echo "Компиляция C сервера..."
     gcc -o server server.c
@@ -7,8 +9,8 @@ elif [ -f "server.cpp" ]; then
     echo "Компиляция C++ сервера..."
     g++ -o server server.cpp
 elif [ -f "server.go" ]; then
-    echo "Go не требует предварительной компиляции"
-    exit 0
+    echo "Компиляция Go сервера"
+    go build -o server server.go
 elif [ -f "server.py" ]; then
     echo "Python не требует компиляции"
     exit 0
