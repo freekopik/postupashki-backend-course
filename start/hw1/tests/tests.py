@@ -140,7 +140,7 @@ class TestRunner:
 
     def compile_code(self):
         self.info("Запуск компиляции...")
-        result = subprocess.run(['./compile.sh'], capture_output=True, text=True)
+        result = subprocess.run(['bash', './compile.sh'], capture_output=True, text=True)
         if result.returncode != 0:
             self.compilation_failed = True
             self.failure_reason = f"Ошибка компиляции: {result.stderr.strip() or result.stdout.strip() or 'Неизвестная ошибка'}"
