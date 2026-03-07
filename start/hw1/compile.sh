@@ -5,7 +5,7 @@ if [ -f "hedgedcurl.cpp" ]; then
     g++ -o hedgedcurl hedgedcurl.cpp -lcurl -lpthread -std=c++11
 elif [ -f "hedgedcurl.go" ]; then
     echo "Компиляция Go hedgedcurl..."
-    go build -o hedgedcurl hedgedcurl.go
+    go build -o hedgedcurl .
 elif [ -f "hedgedcurl.py" ]; then
     echo "Python не требует компиляции"
     exit 0
